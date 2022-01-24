@@ -12,8 +12,8 @@ $userRow=$stmt->fetch(PDO::FETCH_ASSOC);
 if(isset($_POST['address'])){
 
   if($userRow!=null){
-    $stmtpr = $DB_con->prepare("UPDATE Address SET address=:address,city=:city,state=,:state,zipcode=:zipcode
-                                      Where email=,:email");
+    $stmtpr = $DB_con->prepare("UPDATE Address SET address=:address,city=:city,state=:state,zipcode=:zipcode
+                                      Where email=:email");
     $stmtpr->bindparam(":address", $_POST['address']);
     $stmtpr->bindparam(":city", $_POST['city']);
     $stmtpr->bindparam(":state",$_POST['state'] );
